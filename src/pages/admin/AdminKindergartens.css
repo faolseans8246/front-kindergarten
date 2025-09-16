@@ -1,0 +1,19 @@
+.AdminKindergartens{ display: grid; gap: var(--gap-md); }
+.AdminKindergartens h3{ margin: 0; font-size: var(--fs-lg); }
+
+.AdminKindergartens-input{ flex: 1 1 220px; min-width: 180px; }
+.AdminKindergartens-btn{ background: var(--primary); color: var(--primary-contrast); border-color: transparent; }
+
+.AdminKindergartens-pre{
+    background: var(--bg-elev); padding: 12px; border-radius: 12px; overflow: auto; max-height: 40vh;
+    border: 1px solid var(--border);
+}
+.AdminKindergartens-err{
+    color: #b45309; background: color-mix(in oklab, #b45309 12%, transparent);
+    padding: 8px 10px; border-radius: 10px;
+}
+
+/* Stack form neatly on narrow screens */
+@media (max-width: 799px){
+    .AdminKindergartens .row > *{ flex: 1 1 100%; }
+}

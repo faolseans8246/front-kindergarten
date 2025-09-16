@@ -1,0 +1,19 @@
+.LoginModal-backdrop{
+    position: fixed; inset: 0; background: color-mix(in oklab, #000 50%, transparent);
+    display: grid; place-items: center; z-index: 100;
+}
+.LoginModal{
+    width: min(92vw, 420px);
+    background: var(--card); color: var(--text);
+    border: 1px solid var(--border); border-radius: 16px;
+    box-shadow: var(--shadow); padding: 20px;
+}
+.LoginModal h3{ margin: 0 0 10px; font-size: var(--fs-lg); }
+.LoginModal-form{ display: grid; gap: 8px; }
+.LoginModal-error{
+    color: #b91c1c; background: color-mix(in oklab, #b91c1c 10%, transparent);
+    padding: 8px 10px; border-radius: 10px; font-size: var(--fs-sm);
+}
+.LoginModal-actions{
+    margin-top: 8px; display: flex; gap: 8px; justify-content: flex-end;
+}

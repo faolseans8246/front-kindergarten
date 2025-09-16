@@ -1,0 +1,5 @@
+.NotFound{
+    display: grid; place-items: center; text-align: center; gap: 8px; min-height: 40vh;
+}
+.NotFound h2{ font-size: clamp(48px, 8vw, 96px); margin: 0; line-height: 1; }
+.NotFound p{ color: var(--muted); margin: 0; }

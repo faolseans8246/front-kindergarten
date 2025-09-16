@@ -1,0 +1,11 @@
+.Profile{ display: grid; gap: var(--gap-md); }
+.Profile h2{ margin: 0; font-size: var(--fs-lg); }
+
+.Profile-pre{
+    background: var(--bg-elev); padding: 12px; border-radius: 12px; overflow: auto; max-height: 42vh;
+    border: 1px solid var(--border);
+}
+.Profile-error{
+    color: #b91c1c; background: color-mix(in oklab, #b91c1c 12%, transparent);
+    padding: 8px 10px; border-radius: 10px;
+}

@@ -1,0 +1,1 @@
+export const unwrap = (res) => res?.data?.data ?? res?.data ?? res;

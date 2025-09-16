@@ -1,0 +1,17 @@
+.KindergartenList{ display: grid; gap: var(--gap-md); }
+.KindergartenList h2{ margin: 0; font-size: var(--fs-lg); }
+
+.KindergartenList .row{ align-items: stretch; }
+.KindergartenList-item{
+    display: grid; gap: 8px; min-width: 280px;
+}
+.KindergartenList-name{
+    font-weight: 700; font-size: var(--fs-md);
+}
+.KindergartenList-meta{
+    display: grid; gap: 4px; color: var(--muted);
+}
+.KindergartenList-error{
+    color: #b91c1c; background: color-mix(in oklab, #b91c1c 12%, transparent);
+    padding: 8px 10px; border-radius: 10px;
+}

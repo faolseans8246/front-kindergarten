@@ -36,3 +36,95 @@
 /*    transform: rotate(360deg);*/
 /*  }*/
 /*}*/
+
+/* ---- CSS RESET (eng keraklilari) ---- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+
+/* ---- THEME TOKENS ---- */
+:root{
+    --bg: #ffffff;
+    --bg-elev: #f8f9fb;
+    --text: #0f172a;
+    --muted: #6b7280;
+    --primary: #2563eb;
+    --primary-contrast: #ffffff;
+    --border: #e5e7eb;
+    --card: #ffffff;
+
+    --radius: 16px;
+    --shadow: 0 6px 20px rgba(2,6,23,0.06);
+
+    --gap-xs: 6px;
+    --gap-sm: 10px;
+    --gap-md: 16px;
+    --gap-lg: 24px;
+    --gap-xl: 32px;
+
+    --fs-sm: clamp(12px, 0.85rem, 14px);
+    --fs-md: clamp(14px, 1rem, 16px);
+    --fs-lg: clamp(18px, 1.25rem, 22px);
+    --fs-xl: clamp(22px, 1.6rem, 28px);
+
+    --container-w: 1200px;
+}
+
+.theme-dark{
+    --bg: #0b1220;
+    --bg-elev: #0f172a;
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+    --primary: #60a5fa;
+    --primary-contrast: #0b1220;
+    --border: #1f2937;
+    --card: #0f172a;
+}
+
+/* ---- GLOBAL LAYOUT ---- */
+body{ background: var(--bg); color: var(--text); font-size: var(--fs-md); }
+.container{ width: min(100%, var(--container-w)); margin-inline: auto; padding-inline: var(--gap-lg); }
+.card{
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: var(--gap-lg);
+}
+.row{ display: flex; flex-wrap: wrap; gap: var(--gap-md); align-items: center; }
+
+/* ---- LINKS & BUTTONS ---- */
+a{ color: var(--primary); text-decoration: none; }
+a:hover{ text-decoration: underline; }
+
+button{
+    appearance: none; border: 1px solid var(--border);
+    background: var(--bg-elev); color: var(--text);
+    padding: 10px 14px; border-radius: 12px; cursor: pointer;
+}
+button:hover{ filter: brightness(0.98); }
+button:disabled{ opacity: 0.6; cursor: not-allowed; }
+
+input, select{
+    width: min(100%, 320px);
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    border-radius: 12px;
+    outline: none;
+}
+input:focus, select:focus{ border-color: var(--primary); box-shadow: 0 0 0 3px color-mix(in oklab, var(--primary) 25%, transparent); }
+
+/* ---- MAIN / FOOTER ---- */
+main.container{ padding-block: var(--gap-xl); }
+footer{ background: transparent; border-top: 1px dashed var(--border); }
+
+/* ---- BREAKPOINTS ---- */
+@media (max-width: 1023px){
+    .container{ padding-inline: var(--gap-md); }
+}
+@media (max-width: 599px){
+    .row{ gap: var(--gap-sm); }
+    .card{ padding: var(--gap-md); border-radius: 14px; }
+}

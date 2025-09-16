@@ -1,0 +1,11 @@
+.DirectorLayout{ display: grid; gap: var(--gap-md); }
+.DirectorLayout h2{ margin: 0; font-size: var(--fs-xl); }
+.DirectorLayout-tabs{
+    display: flex; gap: var(--gap-sm); flex-wrap: wrap;
+    padding: 8px; border: 1px dashed var(--border); border-radius: 12px;
+    background: var(--bg-elev);
+}
+.DirectorLayout-tabs a{
+    padding: 8px 12px; border-radius: 10px; color: var(--text); text-decoration: none;
+}
+.DirectorLayout-tabs a.active{ background: var(--primary); color: var(--primary-contrast); }
