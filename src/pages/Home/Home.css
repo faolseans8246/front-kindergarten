@@ -1,7 +1,148 @@
-.Home{ display: grid; gap: var(--gap-md); }
-.Home h2{ margin: 0; font-size: var(--fs-xl); }
-.Home ul{ margin: 0; padding-left: 18px; display: grid; gap: 6px; }
-.Home code{
-    background: var(--bg-elev); border: 1px solid var(--border);
-    padding: 2px 6px; border-radius: 8px;
+.Home{
+    display: grid;
+    gap: 24px;
+}
+.Home-hero{
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    align-items: center;
+}
+.Home-badge{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--accent) 20%, transparent);
+    color: var(--accent-contrast, var(--accent));
+    font-weight: 600;
+}
+.Home-heroText h1{
+    margin: 12px 0;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 1.1;
+}
+.Home-heroText h1 span{
+    color: var(--accent);
+}
+.Home-heroText p{
+    margin: 0 0 16px;
+    color: var(--muted);
+    max-width: 600px;
+}
+.Home-heroGrid{
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+.Home-heroCard{
+    padding: 14px 16px;
+    border-radius: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+.Home-heroCard h3{
+    margin: 0 0 6px;
+    font-size: 1rem;
+}
+.Home-heroCard p{
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+.Home-stats{
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+.Home-stats div{
+    background: var(--surface);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    padding: 16px;
+    display: grid;
+    gap: 4px;
+    text-align: center;
+}
+.Home-stats strong{
+    font-size: 1.8rem;
+}
+.Home-stats span{
+    color: var(--muted);
+}
+.Home-application{
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.Home-timeline{
+    display: grid;
+    gap: 16px;
+}
+.Home-timeline ol{
+    margin: 0;
+    padding-left: 20px;
+    display: grid;
+    gap: 8px;
+    color: var(--muted);
+}
+.Home-infoBox{
+    border-radius: 14px;
+    padding: 12px 14px;
+    background: color-mix(in oklab, var(--accent) 12%, transparent);
+    color: var(--accent-contrast, var(--accent));
+    font-weight: 600;
+}
+.Home-pending h3,
+.Home-guides h3{
+    margin: 0 0 8px;
+}
+.Home-muted{
+    margin: 0 0 16px;
+    color: var(--muted);
+}
+.Home-pendingGrid{
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.Home-pendingGrid article{
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 16px;
+    display: grid;
+    gap: 6px;
+}
+.Home-pendingGrid h4{
+    margin: 0;
+}
+.Home-tag{
+    display: inline-flex;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--accent) 18%, transparent);
+    color: var(--accent-contrast, var(--accent));
+    font-size: var(--fs-xs);
+    font-weight: 600;
+}
+.Home-empty{
+    padding: 24px;
+    text-align: center;
+    border-radius: 16px;
+    border: 1px dashed var(--border);
+    color: var(--muted);
+}
+.Home-guidesGrid{
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+.Home-guidesGrid h4{
+    margin: 0 0 6px;
+}
+.Home-guidesGrid p{
+    margin: 0;
+    color: var(--muted);
 }

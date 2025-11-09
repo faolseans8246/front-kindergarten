@@ -1,19 +1,101 @@
-.AdminKindergartens{ display: grid; gap: var(--gap-md); }
-.AdminKindergartens h3{ margin: 0; font-size: var(--fs-lg); }
-
-.AdminKindergartens-input{ flex: 1 1 220px; min-width: 180px; }
-.AdminKindergartens-btn{ background: var(--primary); color: var(--primary-contrast); border-color: transparent; }
-
-.AdminKindergartens-pre{
-    background: var(--bg-elev); padding: 12px; border-radius: 12px; overflow: auto; max-height: 40vh;
+.AdminKindergartens{
+    display: grid;
+    gap: 24px;
+}
+.AdminKindergartens h3{
+    margin: 0;
+}
+.AdminKindergartens-desc{
+    margin: 0;
+    color: var(--muted);
+}
+.AdminKindergartens-forms{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.AdminKindergartens-forms form{
+    display: grid;
+    gap: 10px;
+    border-radius: 16px;
     border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 16px;
 }
-.AdminKindergartens-err{
-    color: #b45309; background: color-mix(in oklab, #b45309 12%, transparent);
-    padding: 8px 10px; border-radius: 10px;
+.AdminKindergartens-forms h4{
+    margin: 0;
 }
-
-/* Stack form neatly on narrow screens */
-@media (max-width: 799px){
-    .AdminKindergartens .row > *{ flex: 1 1 100%; }
+.AdminKindergartens-forms input,
+.AdminKindergartens-forms select,
+.AdminKindergartens-forms textarea{
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: 10px 12px;
+    background: var(--card);
+    color: var(--text);
+}
+.AdminKindergartens-forms button{
+    margin-top: 4px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: none;
+    background: var(--accent);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+.AdminKindergartens-message{
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: color-mix(in oklab, var(--accent) 15%, transparent);
+    color: var(--accent-contrast, var(--accent));
+    font-weight: 600;
+}
+.AdminKindergartens-lists{
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.AdminKindergartens-grid{
+    display: grid;
+    gap: 12px;
+}
+.AdminKindergartens-grid article{
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 16px;
+    display: grid;
+    gap: 8px;
+}
+.AdminKindergartens-grid header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+.AdminKindergartens-grid header strong{
+    font-size: 1.05rem;
+}
+.AdminKindergartens-grid header button{
+    border: none;
+    border-radius: 999px;
+    padding: 6px 12px;
+    background: color-mix(in oklab, #ef4444 20%, transparent);
+    color: #991b1b;
+    font-weight: 600;
+    cursor: pointer;
+}
+.AdminKindergartens-grid footer{
+    display: flex;
+    gap: 12px;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+.AdminKindergartens-empty{
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px dashed var(--border);
+    color: var(--muted);
+    text-align: center;
 }

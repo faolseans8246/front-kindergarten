@@ -1,0 +1,76 @@
+.AdminDashboard{
+    display: grid;
+    gap: 24px;
+}
+.AdminDashboard-header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+}
+.AdminDashboard-header h2{
+    margin: 0 0 6px;
+}
+.AdminDashboard-header p{
+    margin: 0;
+    color: var(--muted);
+}
+.AdminDashboard-pill{
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--accent) 12%, transparent);
+    color: var(--accent-contrast, var(--accent));
+    font-weight: 600;
+}
+.AdminDashboard-stats{
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+.AdminDashboard-stats article{
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 18px;
+    display: grid;
+    gap: 4px;
+    text-align: center;
+}
+.AdminDashboard-stats strong{
+    font-size: 2rem;
+}
+.AdminDashboard-stats span{
+    color: var(--muted);
+}
+.AdminDashboard-grid{
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.AdminDashboard-muted{
+    color: var(--muted);
+    margin: 0 0 12px;
+}
+.AdminDashboard-list{
+    display: grid;
+    gap: 12px;
+}
+.AdminDashboard-list article{
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 16px;
+    display: grid;
+    gap: 6px;
+}
+.AdminDashboard-list h4{
+    margin: 0;
+}
+.AdminDashboard-empty{
+    border-radius: 16px;
+    border: 1px dashed var(--border);
+    padding: 24px;
+    text-align: center;
+    color: var(--muted);
+}

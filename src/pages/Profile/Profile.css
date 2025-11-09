@@ -1,11 +1,30 @@
-.Profile{ display: grid; gap: var(--gap-md); }
-.Profile h2{ margin: 0; font-size: var(--fs-lg); }
-
-.Profile-pre{
-    background: var(--bg-elev); padding: 12px; border-radius: 12px; overflow: auto; max-height: 42vh;
-    border: 1px solid var(--border);
+.Profile{
+    display: grid;
+    gap: 20px;
 }
-.Profile-error{
-    color: #b91c1c; background: color-mix(in oklab, #b91c1c 12%, transparent);
-    padding: 8px 10px; border-radius: 10px;
+.Profile h2{
+    margin: 0;
+}
+.Profile-grid{
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.Profile-grid > div{
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 16px;
+    display: grid;
+    gap: 8px;
+}
+.Profile-grid h3{
+    margin: 0;
+}
+.Profile-grid p{
+    margin: 0;
+    color: var(--muted);
+}
+.Profile-grid p b{
+    color: var(--text);
 }

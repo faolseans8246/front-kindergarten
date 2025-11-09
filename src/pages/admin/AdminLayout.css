@@ -1,11 +1,27 @@
-.AdminLayout{ display: grid; gap: var(--gap-md); }
-.AdminLayout h2{ margin: 0; font-size: var(--fs-xl); }
+.AdminLayout{
+    display: grid;
+    gap: 24px;
+}
+.AdminLayout h2{
+    margin: 0;
+}
 .AdminLayout-tabs{
-    display: flex; gap: var(--gap-sm); flex-wrap: wrap;
-    padding: 8px; border: 1px dashed var(--border); border-radius: 12px;
-    background: var(--bg-elev);
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 10px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: var(--surface);
 }
 .AdminLayout-tabs a{
-    padding: 8px 12px; border-radius: 10px; color: var(--text); text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 999px;
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 600;
 }
-.AdminLayout-tabs a.active{ background: var(--primary); color: var(--primary-contrast); }
+.AdminLayout-tabs a.active{
+    background: var(--accent);
+    color: white;
+}

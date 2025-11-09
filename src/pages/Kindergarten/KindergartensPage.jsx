@@ -1,35 +1,30 @@
-import { useEffect, useState } from "react";
-import { getAllKindergartens } from "../../api/kindergarten";
+import { useMemo } from "react";
+import { useCrmData } from "../../context/CrmDataContext";
 import "./KindergartensPage.css";
 
 export default function KindergartenList() {
-    const [items, setItems] = useState([]);
-    const [err, setErr] = useState(null);
-
-    useEffect(()=>{
-        getAllKindergartens()
-            .then(setItems)
-            .catch(e=> setErr(e?.response?.data || e.message));
-    },[]);
+    const { kindergartens } = useCrmData();
+    const sorted = useMemo(() => [...kindergartens].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)), [kindergartens]);
 
     return (
         <div className="KindergartenList card">
             <h2>Barcha bog'chalar</h2>
-            {err && <div className="KindergartenList-error">{JSON.stringify(err)}</div>}
             <div className="row">
-                {items.map(k=>(
+                {sorted.map(k=>(
                     <div className="KindergartenList-item card" key={k.id} style={{flex:"1 1 320px"}}>
                         <div className="KindergartenList-name">
-                            {k.name} {k.subName ? `— ${k.subName}` : ""}
+                            {k.name}
+                            {k.status === "BRANCH" && <span className="KindergartenList-pill">Filial</span>}
                         </div>
                         <div className="KindergartenList-meta">
-                            <div>Email: {k.email}</div>
-                            <div>Tel: {k.phone}</div>
-                            <div>Tur: {k.type}</div>
+                            <div><b>Direktor:</b> {k.director || "—"}</div>
+                            <div><b>Telefon:</b> {k.phone || "—"}</div>
+                            <div><b>Manzil:</b> {k.address || "—"}</div>
+                            {k.parentId && <div><b>Asosiy bog‘cha ID:</b> {k.parentId}</div>}
                         </div>
                     </div>
                 ))}
-                {items.length===0 && !err && <i>Hali bog‘chalar yo‘q.</i>}
+                {sorted.length===0 && <i>Hali bog‘chalar yo‘q.</i>}
             </div>
         </div>
     );

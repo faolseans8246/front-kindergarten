@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { AuthProvider } from "./context/AuthContext";
 import { ThemeProvider } from "./context/ThemeContext";
+import { CrmDataProvider } from "./context/CrmDataContext";
 import "./index.css";
 
 const root = createRoot(document.getElementById("root"));
@@ -12,7 +13,9 @@ root.render(
         <BrowserRouter>
             <ThemeProvider>
                 <AuthProvider>
-                    <App />
+                    <CrmDataProvider>
+                        <App />
+                    </CrmDataProvider>
                 </AuthProvider>
             </ThemeProvider>
         </BrowserRouter>

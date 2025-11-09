@@ -1,0 +1,93 @@
+.AdminVideos{
+    display: grid;
+    gap: 20px;
+}
+.AdminVideos-desc{
+    margin: 0;
+    color: var(--muted);
+}
+.AdminVideos-form{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    background: var(--surface);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    padding: 16px;
+}
+.AdminVideos-form select,
+.AdminVideos-form input{
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: 10px 12px;
+    background: var(--card);
+    color: var(--text);
+}
+.AdminVideos-form button{
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: none;
+    background: var(--accent);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+.AdminVideos-grid{
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.AdminVideos-grid section{
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 16px;
+    display: grid;
+    gap: 12px;
+}
+.AdminVideos-grid header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.AdminVideos-grid header span{
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+.AdminVideos-list{
+    display: grid;
+    gap: 10px;
+}
+.AdminVideos-list article{
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    padding: 12px;
+    display: grid;
+    gap: 6px;
+}
+.AdminVideos-list h5{
+    margin: 0;
+}
+.AdminVideos-tag{
+    align-self: flex-start;
+    display: inline-flex;
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--accent) 18%, transparent);
+    color: var(--accent-contrast, var(--accent));
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+.AdminVideos-list a{
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+}
+.AdminVideos-empty{
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px dashed var(--border);
+    text-align: center;
+    color: var(--muted);
+}

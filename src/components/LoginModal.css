@@ -8,8 +8,36 @@
     border: 1px solid var(--border); border-radius: 16px;
     box-shadow: var(--shadow); padding: 20px;
 }
-.LoginModal h3{ margin: 0 0 10px; font-size: var(--fs-lg); }
+.LoginModal h3{ margin: 0 0 6px; font-size: var(--fs-lg); }
+.LoginModal-desc{
+    margin: 0 0 16px;
+    font-size: var(--fs-sm);
+    color: var(--muted);
+}
+.LoginModal-steps{
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--muted);
+}
+.LoginModal-steps span{
+    flex: 1;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--border) 40%, transparent);
+    text-align: center;
+}
+.LoginModal-steps span.active{
+    background: var(--accent);
+    color: white;
+}
 .LoginModal-form{ display: grid; gap: 8px; }
+.LoginModal-form small{
+    color: var(--muted);
+    font-size: var(--fs-xs);
+}
 .LoginModal-error{
     color: #b91c1c; background: color-mix(in oklab, #b91c1c 10%, transparent);
     padding: 8px 10px; border-radius: 10px; font-size: var(--fs-sm);
