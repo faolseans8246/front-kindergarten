@@ -1,0 +1,68 @@
+.ApplicationForm{
+    display: grid;
+    gap: 22px;
+    background: linear-gradient(135deg, rgba(94, 123, 255, 0.08), rgba(19, 30, 72, 0.75));
+    border: 1px solid rgba(99, 123, 220, 0.35);
+    box-shadow: 0 22px 60px rgba(9, 15, 35, 0.45);
+}
+
+.ApplicationForm h3{
+    margin: 0;
+    font-size: clamp(1.35rem, 2.5vw, 1.6rem);
+}
+
+.ApplicationForm-desc{
+    margin: 0;
+    color: rgba(214, 222, 255, 0.65);
+    max-width: 560px;
+    line-height: 1.7;
+}
+
+.ApplicationForm-form{
+    display: grid;
+    gap: 14px;
+}
+
+.ApplicationForm-form label{
+    font-weight: 600;
+    color: rgba(222, 230, 255, 0.9);
+}
+
+.ApplicationForm-form textarea{
+    min-height: 120px;
+    resize: vertical;
+}
+
+.ApplicationForm-form button{
+    margin-top: 10px;
+    border-radius: 999px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #5d7aff, #7a97ff);
+    border: none;
+    font-weight: 600;
+}
+
+.ApplicationForm-error,
+.ApplicationForm-success{
+    padding: 12px 16px;
+    border-radius: 16px;
+    font-size: 0.95rem;
+}
+
+.ApplicationForm-error{
+    background: rgba(255, 110, 124, 0.15);
+    color: #ffb6c2;
+    border: 1px solid rgba(255, 137, 155, 0.35);
+}
+
+.ApplicationForm-success{
+    background: rgba(86, 211, 141, 0.18);
+    color: #c9ffdd;
+    border: 1px solid rgba(106, 230, 166, 0.35);
+}
+
+@media (max-width: 600px){
+    .ApplicationForm{
+        gap: 18px;
+    }
+}

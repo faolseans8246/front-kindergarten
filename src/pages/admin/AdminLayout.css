@@ -1,11 +1,198 @@
-.AdminLayout{ display: grid; gap: var(--gap-md); }
-.AdminLayout h2{ margin: 0; font-size: var(--fs-xl); }
-.AdminLayout-tabs{
-    display: flex; gap: var(--gap-sm); flex-wrap: wrap;
-    padding: 8px; border: 1px dashed var(--border); border-radius: 12px;
-    background: var(--bg-elev);
+.AdminShell{
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 32px;
 }
-.AdminLayout-tabs a{
-    padding: 8px 12px; border-radius: 10px; color: var(--text); text-decoration: none;
+
+.AdminShell-sidebar{
+    background: rgba(10, 18, 45, 0.85);
+    border: 1px solid rgba(70, 98, 189, 0.35);
+    border-radius: 28px;
+    padding: 32px 26px;
+    display: grid;
+    gap: 28px;
+    height: fit-content;
 }
-.AdminLayout-tabs a.active{ background: var(--primary); color: var(--primary-contrast); }
+
+.AdminShell-brand span{
+    display: block;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.AdminShell-brand small{
+    color: rgba(189, 204, 248, 0.65);
+}
+
+.AdminShell-nav{
+    display: grid;
+    gap: 12px;
+}
+
+.AdminShell-navLink{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    border-radius: 16px;
+    color: rgba(212, 222, 255, 0.7);
+    font-weight: 500;
+}
+
+.AdminShell-navLink svg{ flex-shrink: 0; }
+
+.AdminShell-navLink.active,
+.AdminShell-navLink:hover{
+    background: rgba(90, 118, 238, 0.2);
+    color: #f0f4ff;
+}
+
+.AdminShell-secondary{
+    display: grid;
+    gap: 10px;
+}
+
+.AdminShell-label{
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(189, 204, 248, 0.5);
+}
+
+.AdminShell-secondary button{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 14px;
+    background: rgba(14, 22, 52, 0.8);
+    border: 1px solid rgba(70, 98, 189, 0.3);
+    color: rgba(204, 215, 255, 0.65);
+}
+
+.AdminShell-upgrade{
+    background: linear-gradient(135deg, rgba(106, 135, 255, 0.25), rgba(32, 45, 102, 0.8));
+    border-radius: 22px;
+    padding: 20px;
+    display: grid;
+    gap: 10px;
+    color: #f2f5ff;
+}
+
+.AdminShell-upgrade h4{
+    margin: 0;
+}
+
+.AdminShell-upgrade span{
+    font-size: 0.85rem;
+    color: rgba(213, 224, 255, 0.75);
+}
+
+.AdminShell-main{
+    display: grid;
+    gap: 28px;
+}
+
+.AdminShell-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.AdminShell-header h1{
+    margin: 0;
+    font-size: clamp(1.6rem, 3vw, 2rem);
+}
+
+.AdminShell-header p{
+    margin: 6px 0 0;
+    color: rgba(195, 207, 246, 0.65);
+}
+
+.AdminShell-controls{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.AdminShell-controls input{
+    min-width: 220px;
+}
+
+.AdminShell-controls select{
+    width: 160px;
+}
+
+.AdminShell-controls button{
+    border-radius: 16px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #5f7dff, #7c98ff);
+    border: none;
+    font-weight: 600;
+}
+
+.AdminShell-metrics{
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.AdminShell-metrics article{
+    background: rgba(15, 24, 54, 0.8);
+    border: 1px solid rgba(72, 101, 198, 0.35);
+    border-radius: 20px;
+    padding: 20px;
+    display: grid;
+    gap: 6px;
+}
+
+.AdminShell-metrics strong{
+    font-size: 1.6rem;
+}
+
+.AdminShell-metrics span{
+    color: rgba(195, 208, 247, 0.7);
+}
+
+.AdminShell-metrics small{
+    color: rgba(119, 150, 255, 0.75);
+    font-weight: 600;
+}
+
+.AdminShell-content{
+    display: grid;
+    gap: 28px;
+}
+
+@media (max-width: 1100px){
+    .AdminShell{
+        grid-template-columns: 240px 1fr;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 900px){
+    .AdminShell{
+        grid-template-columns: 1fr;
+    }
+    .AdminShell-sidebar{
+        position: relative;
+        order: 2;
+    }
+}
+
+@media (max-width: 640px){
+    .AdminShell-header{
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .AdminShell-controls{
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .AdminShell-controls input,
+    .AdminShell-controls select{
+        flex: 1 1 160px;
+    }
+}

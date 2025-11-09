@@ -1,0 +1,102 @@
+.AdminVideos{
+    display: grid;
+    gap: 24px;
+    background: rgba(12, 21, 48, 0.78);
+    border: 1px solid rgba(74, 103, 196, 0.32);
+    border-radius: 24px;
+    padding: 24px;
+}
+
+.AdminVideos header h2{
+    margin: 0;
+}
+
+.AdminVideos header p{
+    margin: 6px 0 0;
+    color: rgba(194, 206, 245, 0.65);
+}
+
+.AdminVideos-form{
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    align-items: center;
+}
+
+.AdminVideos-form button{
+    border-radius: 16px;
+    padding: 12px 20px;
+    font-weight: 600;
+}
+
+.AdminVideos-grid{
+    display: grid;
+    gap: 24px;
+}
+
+.AdminVideos-grid section{
+    background: rgba(16, 26, 58, 0.8);
+    border: 1px solid rgba(72, 101, 198, 0.32);
+    border-radius: 20px;
+    padding: 20px;
+    display: grid;
+    gap: 16px;
+}
+
+.AdminVideos-grid header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.AdminVideos-grid h3{
+    margin: 0;
+}
+
+.AdminVideos-grid span{
+    color: rgba(188, 204, 255, 0.6);
+}
+
+.AdminVideos-list{
+    display: grid;
+    gap: 16px;
+}
+
+.AdminVideos-list article{
+    background: rgba(12, 21, 48, 0.75);
+    border: 1px solid rgba(72, 101, 198, 0.28);
+    border-radius: 16px;
+    padding: 16px;
+    display: grid;
+    gap: 10px;
+}
+
+.AdminVideos-list article div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.AdminVideos-tag{
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(90, 118, 238, 0.18);
+    color: #cfd8ff;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.AdminVideos-list a{
+    color: #92aaff;
+    font-weight: 600;
+}
+
+.AdminVideos-empty{
+    text-align: center;
+    padding: 24px;
+    border: 1px dashed rgba(72, 101, 198, 0.32);
+    border-radius: 14px;
+    color: rgba(196, 208, 247, 0.6);
+}

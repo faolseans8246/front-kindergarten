@@ -14,7 +14,12 @@ const applyMode = (mode) => {
 };
 
 export function ThemeProvider({ children }) {
-    const [mode, setMode] = useState(localStorage.getItem("themeMode") || "auto");
+    const [mode, setMode] = useState(() => {
+        if (typeof window === "undefined") {
+            return "dark";
+        }
+        return localStorage.getItem("themeMode") || "dark";
+    });
 
     useEffect(() => {
         applyMode(mode);

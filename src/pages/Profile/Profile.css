@@ -1,11 +1,38 @@
-.Profile{ display: grid; gap: var(--gap-md); }
-.Profile h2{ margin: 0; font-size: var(--fs-lg); }
-
-.Profile-pre{
-    background: var(--bg-elev); padding: 12px; border-radius: 12px; overflow: auto; max-height: 42vh;
-    border: 1px solid var(--border);
+.Profile{
+    display: grid;
+    gap: 24px;
 }
-.Profile-error{
-    color: #b91c1c; background: color-mix(in oklab, #b91c1c 12%, transparent);
-    padding: 8px 10px; border-radius: 10px;
+
+.Profile h2{
+    margin: 0;
+}
+
+.Profile-grid{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.Profile-grid section{
+    background: rgba(15, 24, 54, 0.75);
+    border: 1px solid rgba(76, 102, 196, 0.32);
+    border-radius: 22px;
+    padding: 22px;
+    display: grid;
+    gap: 12px;
+}
+
+.Profile-grid h3{
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.Profile-grid p{
+    margin: 0;
+    color: rgba(198, 210, 248, 0.7);
+}
+
+.Profile-grid p b{
+    color: rgba(223, 233, 255, 0.92);
+    font-weight: 600;
 }

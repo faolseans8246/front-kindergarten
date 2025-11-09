@@ -1,0 +1,122 @@
+.AdminApplications{
+    background: rgba(14, 23, 52, 0.8);
+    border: 1px solid rgba(72, 100, 196, 0.35);
+    border-radius: 24px;
+    padding: 24px;
+    display: grid;
+    gap: 20px;
+}
+
+.AdminApplications header h2{
+    margin: 0;
+    font-size: 1.35rem;
+}
+
+.AdminApplications header p{
+    margin: 6px 0 0;
+    color: rgba(194, 206, 245, 0.65);
+}
+
+.AdminApplications-table{
+    display: grid;
+    gap: 12px;
+}
+
+.AdminApplications-head,
+.AdminApplications-row{
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr 1.3fr;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 16px;
+}
+
+.AdminApplications-head{
+    background: rgba(17, 27, 58, 0.75);
+    border: 1px solid rgba(70, 98, 189, 0.32);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(189, 204, 248, 0.6);
+}
+
+.AdminApplications-row{
+    background: rgba(11, 20, 47, 0.65);
+    border: 1px solid rgba(72, 100, 196, 0.32);
+}
+
+.AdminApplications-row strong{
+    display: block;
+    color: #f1f4ff;
+}
+
+.AdminApplications-row small{
+    display: block;
+    color: rgba(188, 204, 255, 0.55);
+}
+
+.AdminApplications-badge{
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-flex;
+    justify-content: center;
+    min-width: 120px;
+}
+
+.AdminApplications-badge.pending{
+    background: rgba(253, 224, 138, 0.12);
+    color: #facc15;
+}
+
+.AdminApplications-badge.approved{
+    background: rgba(86, 211, 141, 0.18);
+    color: #86efac;
+}
+
+.AdminApplications-badge.rejected{
+    background: rgba(248, 113, 113, 0.14);
+    color: #fda4af;
+}
+
+.AdminApplications-actions{
+    display: flex;
+    gap: 10px;
+}
+
+.AdminApplications-actions button{
+    border-radius: 14px;
+    padding: 10px 16px;
+    font-weight: 600;
+}
+
+.AdminApplications-actions .danger{
+    background: rgba(220, 38, 38, 0.18);
+    border: 1px solid rgba(248, 113, 113, 0.4);
+    color: #fda4af;
+}
+
+.AdminApplications-actions button:disabled{
+    opacity: 0.4;
+}
+
+.AdminApplications-empty{
+    text-align: center;
+    padding: 32px;
+    border: 1px dashed rgba(74, 102, 198, 0.4);
+    border-radius: 16px;
+    color: rgba(195, 207, 246, 0.65);
+}
+
+@media (max-width: 900px){
+    .AdminApplications-head,
+    .AdminApplications-row{
+        grid-template-columns: 1fr;
+        align-items: stretch;
+    }
+    .AdminApplications-actions{
+        justify-content: flex-start;
+    }
+}

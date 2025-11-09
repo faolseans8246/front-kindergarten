@@ -4,8 +4,10 @@ import Home from "./pages/Home/Home";
 import Profile from "./pages/Profile/Profile";
 import KindergartenList from "./pages/Kindergarten/KindergartensPage";
 import AdminLayout from "./pages/admin/AdminLayout";
-import AdminDirectors from "./pages/admin/AdminDirectors";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminApplications from "./pages/admin/AdminApplications";
 import AdminKindergartens from "./pages/admin/AdminKindergartens";
+import AdminVideos from "./pages/admin/AdminVideos";
 import DirectorLayout from "./pages/director/DirectorLayout";
 import DirStaff from "./pages/director/DirStaff";
 import DirGroups from "./pages/director/DirGroup";
@@ -14,8 +16,10 @@ import NotFound from "./pages/NotFound/NotFound";
 import RequireRole from "./router/RequireRole";
 import RequireAuth from "./router/RequireAuth";
 import "./App.css";
+import { useI18n } from "./context/I18nContext";
 
 export default function App() {
+    const { t } = useI18n();
     return (
         <div className="App">
             <Header />
@@ -31,9 +35,11 @@ export default function App() {
                     <Route path="/admin" element={
                         <RequireRole role="ADMIN"><AdminLayout /></RequireRole>
                     }>
-                        <Route index element={<Navigate to="directors" replace />} />
-                        <Route path="directors" element={<AdminDirectors />} />
+                        <Route index element={<Navigate to="dashboard" replace />} />
+                        <Route path="dashboard" element={<AdminDashboard />} />
+                        <Route path="applications" element={<AdminApplications />} />
                         <Route path="kindergartens" element={<AdminKindergartens />} />
+                        <Route path="videos" element={<AdminVideos />} />
                     </Route>
 
                     <Route path="/director" element={
@@ -49,8 +55,8 @@ export default function App() {
                 </Routes>
             </main>
 
-            <footer style={{textAlign:"center", padding:"24px", color:"var(--muted)"}}>
-                <Link to="/">Kindergarten</Link> © {new Date().getFullYear()}
+            <footer style={{textAlign:"center", padding:"24px", color:"rgba(176,193,245,0.6)"}}>
+                <Link to="/">{t("header.brand")}</Link> © {new Date().getFullYear()}
             </footer>
         </div>
     );

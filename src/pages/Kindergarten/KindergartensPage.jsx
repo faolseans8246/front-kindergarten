@@ -1,35 +1,46 @@
-import { useEffect, useState } from "react";
-import { getAllKindergartens } from "../../api/kindergarten";
+import { useMemo } from "react";
+import { useCrmData } from "../../context/CrmDataContext";
+import { useI18n } from "../../context/I18nContext";
 import "./KindergartensPage.css";
 
 export default function KindergartenList() {
-    const [items, setItems] = useState([]);
-    const [err, setErr] = useState(null);
-
-    useEffect(()=>{
-        getAllKindergartens()
-            .then(setItems)
-            .catch(e=> setErr(e?.response?.data || e.message));
-    },[]);
+    const { kindergartens } = useCrmData();
+    const { t } = useI18n();
+    const sorted = useMemo(() => [...kindergartens].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)), [kindergartens]);
 
     return (
         <div className="KindergartenList card">
-            <h2>Barcha bog'chalar</h2>
-            {err && <div className="KindergartenList-error">{JSON.stringify(err)}</div>}
-            <div className="row">
-                {items.map(k=>(
-                    <div className="KindergartenList-item card" key={k.id} style={{flex:"1 1 320px"}}>
-                        <div className="KindergartenList-name">
-                            {k.name} {k.subName ? `— ${k.subName}` : ""}
-                        </div>
-                        <div className="KindergartenList-meta">
-                            <div>Email: {k.email}</div>
-                            <div>Tel: {k.phone}</div>
-                            <div>Tur: {k.type}</div>
-                        </div>
-                    </div>
+            <h2>{t("kindergartens.title")}</h2>
+            <div className="KindergartenList-grid">
+                {sorted.map((k) => (
+                    <article key={k.id}>
+                        <header>
+                            <h3>{k.name}</h3>
+                            {k.status === "BRANCH" && <span className="KindergartenList-pill">{t("common.statuses.branch")}</span>}
+                        </header>
+                        <dl>
+                            <div>
+                                <dt>{t("kindergartens.director")}</dt>
+                                <dd>{k.director || "—"}</dd>
+                            </div>
+                            <div>
+                                <dt>{t("kindergartens.phone")}</dt>
+                                <dd>{k.phone || "—"}</dd>
+                            </div>
+                            <div>
+                                <dt>{t("kindergartens.address")}</dt>
+                                <dd>{k.address || "—"}</dd>
+                            </div>
+                            {k.parentId && (
+                                <div>
+                                    <dt>{t("kindergartens.parent")}</dt>
+                                    <dd>{k.parentId}</dd>
+                                </div>
+                            )}
+                        </dl>
+                    </article>
                 ))}
-                {items.length===0 && !err && <i>Hali bog‘chalar yo‘q.</i>}
+                {sorted.length === 0 && <div className="KindergartenList-empty">{t("kindergartens.empty")}</div>}
             </div>
         </div>
     );

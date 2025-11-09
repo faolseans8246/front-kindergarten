@@ -1,32 +1,30 @@
-import { useEffect, useState } from "react";
-import { getProfile, getMyBlockStatus } from "../../api/user";
+import { useAuth } from "../../context/AuthContext";
+import { useCrmData } from "../../context/CrmDataContext";
+import { useI18n } from "../../context/I18nContext";
 import "./Profile.css";
 
 export default function Profile() {
-    const [data, setData] = useState(null);
-    const [status, setStatus] = useState(null);
-    const [err, setErr] = useState(null);
-
-    useEffect(()=>{
-        (async ()=>{
-            try {
-                const [p, s] = await Promise.all([getProfile(), getMyBlockStatus()]);
-                setData(p); setStatus(s);
-            } catch (e) { setErr(e?.response?.data || e.message); }
-        })();
-    },[]);
+    const { user, role } = useAuth();
+    const { stats } = useCrmData();
+    const { t } = useI18n();
 
     return (
         <div className="Profile card">
-            <h2>Mening profilim</h2>
-            {err && <pre className="Profile-error">{JSON.stringify(err,null,2)}</pre>}
-            {data && <pre className="Profile-pre">{JSON.stringify(data,null,2)}</pre>}
-            {status && (
-                <>
-                    <h3>Blok holati</h3>
-                    <pre className="Profile-pre">{JSON.stringify(status,null,2)}</pre>
-                </>
-            )}
+            <h2>{t("profile.title")}</h2>
+            <div className="Profile-grid">
+                <section>
+                    <h3>{t("profile.userSection")}</h3>
+                    <p><b>{t("profile.fullName")}:</b> {user?.fullName || "—"}</p>
+                    <p><b>{t("profile.phone")}:</b> {user?.phoneNumber || "—"}</p>
+                    <p><b>{t("profile.role")}:</b> {role || "—"}</p>
+                </section>
+                <section>
+                    <h3>{t("profile.statsSection")}</h3>
+                    <p><b>{t("profile.mainCount")}:</b> {stats.totalMain}</p>
+                    <p><b>{t("profile.branchCount")}:</b> {stats.totalBranches}</p>
+                    <p><b>{t("profile.pendingCount")}:</b> {stats.pendingApplications}</p>
+                </section>
+            </div>
         </div>
     );
 }

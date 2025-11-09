@@ -1,17 +1,79 @@
-.KindergartenList{ display: grid; gap: var(--gap-md); }
-.KindergartenList h2{ margin: 0; font-size: var(--fs-lg); }
+.KindergartenList{
+    display: grid;
+    gap: 24px;
+}
 
-.KindergartenList .row{ align-items: stretch; }
-.KindergartenList-item{
-    display: grid; gap: 8px; min-width: 280px;
+.KindergartenList h2{
+    margin: 0;
 }
-.KindergartenList-name{
-    font-weight: 700; font-size: var(--fs-md);
+
+.KindergartenList-grid{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
-.KindergartenList-meta{
-    display: grid; gap: 4px; color: var(--muted);
+
+.KindergartenList-grid article{
+    background: rgba(14, 22, 51, 0.78);
+    border: 1px solid rgba(72, 101, 198, 0.35);
+    border-radius: 22px;
+    padding: 20px;
+    display: grid;
+    gap: 12px;
 }
-.KindergartenList-error{
-    color: #b91c1c; background: color-mix(in oklab, #b91c1c 12%, transparent);
-    padding: 8px 10px; border-radius: 10px;
+
+.KindergartenList-grid header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.KindergartenList-grid h3{
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.KindergartenList-pill{
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(94, 123, 255, 0.24);
+    color: #dce5ff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.KindergartenList-grid dl{
+    margin: 0;
+    display: grid;
+    gap: 10px;
+}
+
+.KindergartenList-grid dl div{
+    display: grid;
+    gap: 2px;
+}
+
+.KindergartenList-grid dt{
+    font-size: 0.8rem;
+    color: rgba(190, 203, 247, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.KindergartenList-grid dd{
+    margin: 0;
+    color: rgba(216, 225, 255, 0.88);
+    font-weight: 500;
+}
+
+.KindergartenList-empty{
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 28px;
+    border: 1px dashed rgba(72, 101, 198, 0.4);
+    border-radius: 18px;
+    color: rgba(196, 208, 247, 0.65);
 }

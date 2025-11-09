@@ -1,19 +1,327 @@
 .LoginModal-backdrop{
-    position: fixed; inset: 0; background: color-mix(in oklab, #000 50%, transparent);
-    display: grid; place-items: center; z-index: 100;
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 10, 26, 0.85);
+    backdrop-filter: blur(18px);
+    display: grid;
+    place-items: center;
+    z-index: 120;
+    padding: 16px;
 }
+
 .LoginModal{
-    width: min(92vw, 420px);
-    background: var(--card); color: var(--text);
-    border: 1px solid var(--border); border-radius: 16px;
-    box-shadow: var(--shadow); padding: 20px;
+    width: min(100%, 880px);
+    background: linear-gradient(135deg, #0d1533 0%, #090f23 48%, #0b1128 100%);
+    border: 1px solid rgba(88, 110, 213, 0.28);
+    border-radius: 28px;
+    color: #f7faff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(4, 9, 30, 0.55);
 }
-.LoginModal h3{ margin: 0 0 10px; font-size: var(--fs-lg); }
-.LoginModal-form{ display: grid; gap: 8px; }
-.LoginModal-error{
-    color: #b91c1c; background: color-mix(in oklab, #b91c1c 10%, transparent);
-    padding: 8px 10px; border-radius: 10px; font-size: var(--fs-sm);
+
+.LoginModal-visual{
+    position: relative;
+    padding: 48px 40px;
+    display: grid;
+    align-content: space-between;
+    background: radial-gradient(circle at top left, rgba(63, 93, 241, 0.4), transparent 62%);
 }
+
+.LoginModal-illustration{
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 260px;
+}
+
+.LoginModal-circle{
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #3755ff 0%, #213096 40%, #121a44 100%);
+    box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.15);
+}
+
+.LoginModal-phone{
+    position: absolute;
+    width: 150px;
+    aspect-ratio: 9/18;
+    background: linear-gradient(160deg, #f7f8ff, #dbe1ff);
+    border-radius: 32px;
+    box-shadow: 0 14px 40px rgba(11, 15, 34, 0.45);
+    display: grid;
+    place-items: center;
+}
+
+.LoginModal-screen{
+    width: 78%;
+    height: 76%;
+    background: #111d3f;
+    border-radius: 24px;
+    padding: 16px;
+    display: grid;
+    gap: 14px;
+}
+
+.LoginModal-screen span{
+    display: block;
+    width: 48px;
+    height: 48px;
+    background: radial-gradient(circle at 40% 30%, #ffcb9a, #f58f65);
+    border-radius: 50%;
+}
+
+.LoginModal-screen div{
+    height: 12px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.35), rgba(255,255,255,0.05));
+    border-radius: 999px;
+}
+
+.LoginModal-hand{
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle at 40% 40%, #ffcaa4, #f49a6f);
+    border-radius: 50% 50% 45% 55% / 60% 40% 60% 40%;
+    bottom: -24px;
+    right: -18px;
+    transform: rotate(12deg);
+    box-shadow: inset -6px -6px 0 rgba(0,0,0,0.08);
+}
+
+.LoginModal-helper{
+    font-size: 0.95rem;
+    color: rgba(233, 240, 255, 0.75);
+    line-height: 1.6;
+    max-width: 280px;
+}
+
+.LoginModal-panel{
+    background: rgba(13, 17, 35, 0.75);
+    padding: 48px 44px;
+    display: grid;
+    gap: 20px;
+}
+
+.LoginModal-header h3{
+    margin: 0 0 6px;
+    font-size: 1.65rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.LoginModal-header p{
+    margin: 0 0 20px;
+    color: rgba(215, 224, 255, 0.7);
+    line-height: 1.6;
+}
+
+.LoginModal-steps{
+    display: flex;
+    gap: 10px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(186, 198, 255, 0.5);
+}
+
+.LoginModal-steps span{
+    flex: 1;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(33, 45, 94, 0.5);
+    text-align: center;
+}
+
+.LoginModal-steps span.active{
+    background: linear-gradient(135deg, #4f6ef7, #6f8aff);
+    color: #fff;
+    box-shadow: 0 8px 18px rgba(85, 113, 255, 0.35);
+}
+
+.LoginModal-form{
+    display: grid;
+    gap: 12px;
+}
+
+.LoginModal-form label{
+    font-weight: 600;
+}
+
+.LoginModal-form input{
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(94, 115, 207, 0.45);
+    background: rgba(15, 20, 42, 0.9);
+    color: #f6f8ff;
+    font-size: 1rem;
+}
+
+.LoginModal-form input::placeholder{
+    color: rgba(177, 189, 240, 0.5);
+}
+
+.LoginModal-form small{
+    color: rgba(188, 204, 255, 0.65);
+}
+
 .LoginModal-actions{
-    margin-top: 8px; display: flex; gap: 8px; justify-content: flex-end;
+    margin-top: 6px;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.LoginModal-actions button{
+    padding: 12px 22px;
+    border-radius: 999px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.LoginModal-actions button[type="button"]{
+    background: rgba(27, 39, 90, 0.4);
+    color: rgba(210, 220, 255, 0.75);
+}
+
+.LoginModal-actions button[type="submit"]{
+    background: linear-gradient(120deg, #516efb, #7995ff);
+    color: #fff;
+}
+
+.LoginModal-error{
+    padding: 10px 14px;
+    border-radius: 16px;
+    background: rgba(255, 86, 120, 0.18);
+    color: #ffb6c7;
+    font-size: 0.92rem;
+}
+
+.LoginModal-pin{
+    display: grid;
+    gap: 18px;
+}
+
+.LoginModal-pinHeader{
+    display: grid;
+    gap: 6px;
+}
+
+.LoginModal-pinHeader label{
+    font-weight: 600;
+}
+
+.LoginModal-pinHeader small{
+    color: rgba(188, 204, 255, 0.65);
+}
+
+.LoginModal-dots{
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+}
+
+.LoginModal-dots span{
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid rgba(91, 113, 209, 0.45);
+    display: grid;
+    place-items: center;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.LoginModal-dots span.filled{
+    background: linear-gradient(135deg, #5a7aff, #3a58ec);
+    border-color: transparent;
+}
+
+.LoginModal-keypad{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.LoginModal-keypad button{
+    height: 62px;
+    border-radius: 18px;
+    border: none;
+    background: rgba(20, 29, 62, 0.9);
+    color: #f6f8ff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 1px rgba(92, 110, 207, 0.45);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.LoginModal-keypad button:active{
+    transform: translateY(1px);
+}
+
+.LoginModal-keypad button:focus-visible{
+    outline: 2px solid rgba(120, 146, 255, 0.8);
+    outline-offset: 2px;
+}
+
+.LoginModal-keypadBack{
+    font-size: 1.3rem;
+}
+
+.LoginModal-keypadConfirm{
+    background: linear-gradient(135deg, #5e7bff, #7c98ff);
+    box-shadow: 0 12px 24px rgba(90, 120, 255, 0.35);
+    font-size: 1rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.LoginModal-keypadConfirm:disabled{
+    opacity: 0.45;
+    cursor: not-allowed;
+    box-shadow: inset 0 0 0 1px rgba(92, 110, 207, 0.35);
+    background: rgba(38, 55, 112, 0.8);
+}
+
+.LoginModal-pinFooter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.LoginModal-pinFooter button{
+    background: none;
+    border: none;
+    color: rgba(190, 204, 255, 0.7);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.LoginModal-pinForgot{
+    text-decoration: underline;
+}
+
+@media (max-width: 860px){
+    .LoginModal{
+        grid-template-columns: 1fr;
+    }
+    .LoginModal-visual{
+        display: none;
+    }
+}
+
+@media (max-width: 520px){
+    .LoginModal-panel{
+        padding: 36px 26px;
+    }
+    .LoginModal-keypad button{
+        height: 56px;
+        border-radius: 16px;
+    }
 }
