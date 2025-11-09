@@ -1,17 +1,38 @@
-.KindergartenList{ display: grid; gap: var(--gap-md); }
-.KindergartenList h2{ margin: 0; font-size: var(--fs-lg); }
-
-.KindergartenList .row{ align-items: stretch; }
+.KindergartenList{
+    display: grid;
+    gap: 20px;
+}
+.KindergartenList h2{
+    margin: 0;
+}
+.KindergartenList .row{
+    align-items: stretch;
+    gap: 16px;
+}
 .KindergartenList-item{
-    display: grid; gap: 8px; min-width: 280px;
+    display: grid;
+    gap: 12px;
+    min-width: 280px;
 }
 .KindergartenList-name{
-    font-weight: 700; font-size: var(--fs-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+.KindergartenList-pill{
+    display: inline-flex;
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--accent) 15%, transparent);
+    color: var(--accent-contrast, var(--accent));
+    font-size: 0.75rem;
+    font-weight: 600;
 }
 .KindergartenList-meta{
-    display: grid; gap: 4px; color: var(--muted);
-}
-.KindergartenList-error{
-    color: #b91c1c; background: color-mix(in oklab, #b91c1c 12%, transparent);
-    padding: 8px 10px; border-radius: 10px;
+    display: grid;
+    gap: 6px;
+    color: var(--muted);
 }

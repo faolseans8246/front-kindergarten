@@ -4,8 +4,10 @@ import Home from "./pages/Home/Home";
 import Profile from "./pages/Profile/Profile";
 import KindergartenList from "./pages/Kindergarten/KindergartensPage";
 import AdminLayout from "./pages/admin/AdminLayout";
-import AdminDirectors from "./pages/admin/AdminDirectors";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminApplications from "./pages/admin/AdminApplications";
 import AdminKindergartens from "./pages/admin/AdminKindergartens";
+import AdminVideos from "./pages/admin/AdminVideos";
 import DirectorLayout from "./pages/director/DirectorLayout";
 import DirStaff from "./pages/director/DirStaff";
 import DirGroups from "./pages/director/DirGroup";
@@ -31,9 +33,11 @@ export default function App() {
                     <Route path="/admin" element={
                         <RequireRole role="ADMIN"><AdminLayout /></RequireRole>
                     }>
-                        <Route index element={<Navigate to="directors" replace />} />
-                        <Route path="directors" element={<AdminDirectors />} />
+                        <Route index element={<Navigate to="dashboard" replace />} />
+                        <Route path="dashboard" element={<AdminDashboard />} />
+                        <Route path="applications" element={<AdminApplications />} />
                         <Route path="kindergartens" element={<AdminKindergartens />} />
+                        <Route path="videos" element={<AdminVideos />} />
                     </Route>
 
                     <Route path="/director" element={

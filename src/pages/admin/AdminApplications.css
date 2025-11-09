@@ -1,0 +1,94 @@
+.AdminApplications{
+    display: grid;
+    gap: 16px;
+}
+.AdminApplications-desc{
+    margin: 0;
+    color: var(--muted);
+}
+.AdminApplications-table{
+    display: grid;
+    gap: 8px;
+}
+.AdminApplications-row{
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 0.8fr 1fr;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+}
+.AdminApplications-head{
+    font-weight: 600;
+    background: transparent;
+    border-style: dashed;
+}
+.AdminApplications-row span{
+    display: grid;
+    gap: 4px;
+    font-size: 0.95rem;
+}
+.AdminApplications-row small{
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+.AdminApplications-actions{
+    display: flex !important;
+    gap: 8px;
+}
+.AdminApplications-actions button{
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    background: var(--accent);
+    color: white;
+}
+.AdminApplications-actions button:disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.AdminApplications-actions button.danger{
+    background: color-mix(in oklab, #ef4444 80%, transparent);
+}
+.AdminApplications-badge{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.AdminApplications-badge.pending{
+    background: color-mix(in oklab, #facc15 25%, transparent);
+    color: #854d0e;
+}
+.AdminApplications-badge.approved{
+    background: color-mix(in oklab, #22c55e 20%, transparent);
+    color: #14532d;
+}
+.AdminApplications-badge.rejected{
+    background: color-mix(in oklab, #ef4444 20%, transparent);
+    color: #991b1b;
+}
+.AdminApplications-empty{
+    padding: 24px;
+    text-align: center;
+    border-radius: 16px;
+    border: 1px dashed var(--border);
+    color: var(--muted);
+}
+
+@media (max-width: 900px) {
+    .AdminApplications-row{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .AdminApplications-row span:last-child{
+        grid-column: span 2;
+    }
+}
